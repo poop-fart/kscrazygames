@@ -113,6 +113,10 @@
     const submit = document.getElementById("submitop")
     const comment_list = document.getElementById("comments")
 
+    const comments_arr = []
+
+    display_comments();
+
     submit.addEventListener('click', function(){
 
         const comment = comment_text.value;
@@ -121,10 +125,20 @@
         newcomment.innerText = comment
 
         comment_list.appendChild(newcomment)
+        comments_arr.push(newcomment)
 
         comment_text.value('')
 
     })
+
+    const display_comments = () => {
+     let list = '<ul>';
+   comments_arr.forEach(comment => {
+    list += `<li>${comment}</li>`;
+    })
+    list += '</ul>';
+    comments.innerHTML = list;
+}
 
 </script>
 
