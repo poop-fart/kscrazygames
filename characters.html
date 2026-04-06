@@ -13,7 +13,11 @@
         text-shadow: 2px 2px black;
     }
 
+    #victimop {
 
+        background-color: rgb(0, 89, 255);
+
+    }
 
 
     .grid {
@@ -21,19 +25,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
 
-    }
-
-    .playeractions {
-        display: flex;
-        gap: 2px;
-
-        justify-content: left;
-    }
-
-    .action {
-        background-color: blue;
-
-        padding: 5px;
     }
 
 
@@ -88,9 +79,9 @@
 
 
 
-<div class="playeractions">
+<div class="actions">
 
-<div class="action">
+
     <div id="victimop">
         <h3>VICTIM OPINION.</h3>
         <p>P.s. The police won't see this.<br>
@@ -107,30 +98,12 @@
             </ul>
         </div>
     </div>
-</div>
 
 
-<div class="action">
-    <div class="donate">
-
-        <h3>Give one popcorn!</h3>
-
-        <p>Help me feed my ocs please ty</p>
-
-        <button type="button" id="donation">Donate or else.</button>
-
-    </div>
-</div>
-
-
-<div class="action">
-    <div class="popcorns">
-
-        <h3>Popcorns Given!</h3>
-            <p id="popcount"></p>
+    
 
 </div>
-</div>
+
 
 
 
@@ -140,13 +113,9 @@
     const submit = document.getElementById("submitop")
     const comment_list = document.getElementById("comments")
 
-    showcomments();
-
     submit.addEventListener('click', function(){
 
         const comment = comment_text.value;
-
-        //localStorage.setItem("comment", comments_arr)
 
         const newcomment = document.createElement('li');
         newcomment.innerText = comment
@@ -157,47 +126,16 @@
 
     })
 
-
-
-    //give popcorns
-    popcorndonation = document.getElementById("donation")
-    var popcorns = 0
-    var popcount = document.getElementById("popcount")
-
-    showSave();
-
-    function showSave(){
-
-        save = localStorage.getItem("popcorns")
-
-    }
-
-    popcorndonation.addEventListener('click', function(){
-
-        popcorns++;
-        update();
-    })
-
-    function update(){
-
-        popcount.innerHTML = popcorns
-
-        //save popcorn count in local storage?
-        localStorage.setItem("popcorns", popcount)
-
-    }
-
 </script>
-
-
 
 
 <hr>
 <h4>See other pages</h4>
+<header>
         <nav>
             <a href="index.html">Home</a>
             <a href="news.html">The Scoup</a>
             <a href="art.html">Tv</a>
             <a href="games.html">Games</a>
         </nav>
-
+    </header>
