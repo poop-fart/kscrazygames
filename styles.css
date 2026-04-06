@@ -13,23 +13,3 @@ h3 {
     background-color: rgb(146, 147, 255);
 }
 
-.charslot {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 30px;
-
-    .shortdesc {
-        text-align: right;
-    }
-}
-
-.charslot > article {
-    font-size: 18px;
-    padding: 5px;
-    border: 2px solid black;
-    background:rgb(228, 228, 228);
-}
-
-.charslot > p {
-    text-align: center;
-}

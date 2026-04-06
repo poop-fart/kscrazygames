@@ -12,9 +12,36 @@
 
         text-shadow: 2px 2px black;
     }
+
+
+
+
+    .grid {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
+    .playeractions {
+        display: flex;
+        gap: 2px;
+
+        justify-content: left;
+    }
+
+    .action {
+        background-color: blue;
+
+        padding: 5px;
+    }
+
+
 </style>
 
 <link href="styles.css" rel="stylesheet">
+
+
 <body>
     <p>Information and fun facts about characters<br>
     featured in my visual novels!</p>
@@ -25,7 +52,9 @@
     SPOILER WARNING</p>
 </body>
 
-<div class="charslot">
+<div class="grid">
+
+<div class="item">
     <article>
     <p>Forrest</p>
     <img src="images\forrestgif.gif" width="200" height="150">
@@ -35,7 +64,13 @@
 
 </article>
 
-<div class="charslot">
+</div>
+
+
+
+
+<div class="item">
+
         <article>
     <p>Mavrick</p>
     <img src="images\gif.gif" width="200" height="150">
@@ -44,18 +79,120 @@
     <div class="shortdesc">Antag of TTN</div>
 
 </article>
-</div>
 
 </div>
+
+
+
+</div>
+
+
+
+<div class="playeractions">
+
+<div class="action">
+    <div id="victimop">
+        <h3>VICTIM OPINION.</h3>
+        <p>P.s. The police won't see this.<br>
+        This section is to give victims of any of these men a place to vent... Uselessly. No one's coming to save you <3<br>
+        Feel free to compain with absolutely no consiquences whatsoever!
+        </p>
+
+        <input type="text" id="commenttext">
+        <button type="button" id="submitop">Submit</button>
+
+        <div>
+            <ul id="comments">
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="action">
+    <div class="donate">
+
+        <h3>Give one popcorn!</h3>
+
+        <p>Help me feed my ocs please ty</p>
+
+        <button type="button" id="donation">Donate or else.</button>
+
+    </div>
+</div>
+
+
+<div class="action">
+    <div class="popcorns">
+
+        <h3>Popcorns Given!</h3>
+            <p id="popcount"></p>
+
+</div>
+</div>
+
+
+
+<script>
+
+    const comment_text = document.getElementById("commenttext")
+    const submit = document.getElementById("submitop")
+    const comment_list = document.getElementById("comments")
+
+    submit.addEventListener('click', function(){
+
+        const comment = comment_text.value;
+
+        const newcomment = document.createElement('li');
+        newcomment.innerText = comment
+
+        localStorage.setItem("comment", newcomment);
+
+        localStorage.getItem("comment")
+
+        comment_list.appendChild(newcomment)
+
+        comment_text.value('')
+
+    })
+
+
+    //give popcorns
+    popcorndonation = document.getElementById("donation")
+    var popcorns = 0
+    var popcount = document.getElementById("popcount")
+
+    save = localStorage.getItem("popcorns")
+
+    popcorns = save
+
+    popcorndonation.addEventListener('click', function(){
+
+        popcorns++;
+        update();
+    })
+
+    function update(){
+
+        popcount.innerHTML = popcorns
+
+        //save popcorn count in local storage?
+        localStorage.setItem("popcorns", popcount)
+
+    }
+
+</script>
+
+
 
 
 <hr>
 <h4>See other pages</h4>
-<header>
         <nav>
             <a href="index.html">Home</a>
             <a href="news.html">The Scoup</a>
             <a href="art.html">Tv</a>
             <a href="games.html">Games</a>
         </nav>
-    </header>
+
