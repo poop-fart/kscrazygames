@@ -13,7 +13,7 @@ Cgs and out-of-game artwork</p>
         text-align: center;
     }
 
-    button {
+    #next {
         background-color: yellow;
         color: rgba(255, 255, 0, 0);
 
@@ -34,7 +34,7 @@ Cgs and out-of-game artwork</p>
     <img src="https://media1.tenor.com/m/sd0VnIUAP6cAAAAC/2.gif" id="currentchannel" width="842" height="595">
 
     <div class="controls">
-        <button onclick="changechannel()">Next</button>
+        <button id="next" onclick="changechannel()">Next</button>
     </div>
 
 </div>
@@ -62,14 +62,9 @@ Cgs and out-of-game artwork</p>
 
 <hr>
 
-<h4>See other pages</h4>
-<header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="news.html">The Scoup</a>
-            <a href="characters.html">Characters</a>
-            <a href="games.html">Games</a>
-        </nav>
-    </header>
-
-
+<h4>Pages</h4>
+            <button type="button" onclick="location.href='characters.html'">Characters</button>
+            <button type="button" onclick="location.href='news.html'">News</button>
+            <button type="button" onclick="location.href='tv.html'">Tv</button>
+            <button type="button" onclick="location.href='games.html'">Games</button>
+            <button type="button" onclick="location.href='other.html'">Other Projects</button>
