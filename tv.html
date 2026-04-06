@@ -1,0 +1,76 @@
+<h1>Tv</h1>
+
+<link href="styles.css" rel="stylesheet">
+<p>Character art and gifs! Only ones from my visual novels. <br>
+Cgs and out-of-game artwork</p>
+
+<style>
+    body {
+        background-color: rgb(38, 0, 255);
+
+        border: 5px dashed black;
+
+        text-align: center;
+    }
+
+    button {
+        background-color: yellow;
+        color: rgba(255, 255, 0, 0);
+
+        border: 5px solid black;
+
+        font-size: 20px;
+        padding: 5px;
+    }
+    button:hover {
+        background-color: black;
+
+        border: 3px solid black;
+    }
+
+</style>
+
+<div class="tv">
+
+    <img src="https://media1.tenor.com/m/sd0VnIUAP6cAAAAC/2.gif" id="currentchannel" width="842" height="595">
+
+    <div class="controls">
+        <button onclick="changechannel()">Next</button>
+    </div>
+
+</div>
+
+
+<script>
+
+    function changechannel(){
+
+        mainchannel = ["drawings/forrest face design.png", "drawings/old forrest 2.png", "drawings/old forrest.png", "images/forrestgif.gif", "images/razzgif.gif"];
+
+        let img = document.getElementById("currentchannel");
+
+        var min = 0;
+        var max = 4;
+
+        var number = Math.floor(Math.random() * (max - min + 1) + min);
+
+        img.src = mainchannel[number];
+        
+    }
+
+</script>
+
+
+<hr>
+
+<h4>See other pages</h4>
+<header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="news.html">The Scoup</a>
+            <a href="characters.html">Characters</a>
+            <a href="games.html">Games</a>
+        </nav>
+    </header>
+
+
