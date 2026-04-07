@@ -32,40 +32,56 @@ Cgs and out-of-game artwork</p>
 
     .tv {
 
-        display:block;
+        position: relative;
+
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
 
     }
 
     .overlay {
 
         position:absolute;
+        inset: 0;
 
-        top:13.7%;
+        object-fit: cover;
+        opacity: 100%;
 
-        width: 842px;
-        height: 595px;
-
-        background-blend-mode: overlay;
-
-        background-color: rgba(0, 0, 255, 0.329);
-
-        
+        mix-blend-mode: overlay;
 
     }
 
+    #screen {
+
+        position: flex;
+
+        justify-content: center;
+        justify-items: center;
+    }
+    
+
 </style>
 
+
+
 <div class="tv">
+    <div id="screen">
+    <img src="https://media1.tenor.com/m/sd0VnIUAP6cAAAAC/2.gif" id="currentchannel" width="1000" height="500">
 
+    <div class="overlay">
+        <img src="https://media1.tenor.com/m/88dnH_mHRLAAAAAC/static-tv-static.gif" width="1000" height="500">
+    </div>
+    </div>
     
-    <img src="https://media1.tenor.com/m/sd0VnIUAP6cAAAAC/2.gif" id="currentchannel" width="842" height="595">
-    <div class="overlay"></div>
 
-    <div class="controls">
+</div>
+
+<div class="controls">
         <button id="next" onclick="changechannel();">Next</button>
     </div>
 
-</div>
 
 
 <script>
