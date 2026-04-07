@@ -6,7 +6,10 @@ Cgs and out-of-game artwork</p>
 
 <style>
     body {
-        background-color: rgb(255, 255, 255);
+        background-color: rgba(0, 4, 255, 0.534);
+        background-image: url(https://media1.tenor.com/m/fHQvaaO_jq8AAAAC/snow-room-cold.gif);
+
+        background-size: cover;
 
         text-align: center;
     }
@@ -27,10 +30,36 @@ Cgs and out-of-game artwork</p>
         border: 3px solid black;
     }
 
+    .tv {
+
+        display:block;
+
+    }
+
+    .overlay {
+
+        position:absolute;
+
+        top:13.7%;
+
+        width: 842px;
+        height: 595px;
+
+        background-blend-mode: overlay;
+
+        background-color: rgba(0, 0, 255, 0.329);
+
+        
+
+    }
+
 </style>
 
 <div class="tv">
+
+    
     <img src="https://media1.tenor.com/m/sd0VnIUAP6cAAAAC/2.gif" id="currentchannel" width="842" height="595">
+    <div class="overlay"></div>
 
     <div class="controls">
         <button id="next" onclick="changechannel();">Next</button>
